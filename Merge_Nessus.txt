@@ -1,0 +1,27 @@
+For Nesus finding raw result row duplication removal
+1. Before doing any findings sorting, drag all Nessus raw files into one excel file, then run merger script to merge all raw worksheets into single excel worksheet
+copy *.csv [result].csv
+
+2. insert two columns (A and B) at the beginning
+
+3. Paste the following at cell A2 and fill down- To merge CVE number with duplication detail
+=IF(CONCATENATE(F2,G2,H2,I2,J2,K2,L2,M2)=CONCATENATE(F1,G1,H1,I1,J1,K1,L1,M1),
+ IF(CONCATENATE(F2,G2,H2,I2,J2,K2,L2,M2)=CONCATENATE(F3,G3,H3,I3,J3,K3,L3,M3),CONCATENATE(A1," ",D2),
+   IF(CONCATENATE(F2,G2,H2,I2,J2,K2,L2,M2)=CONCATENATE(F1,G1,H1,I1,J1,K1,L1,M1),CONCATENATE(A1," ",D2),"")
+ ),D2)
+
+
+4. Paste the following at cell B2 and fill down- To mark row as 'delete' for duplication 
+=IF(A2="","",
+ IF(NOT(CONCATENATE(F2,G2,H2,I2,J2,K2,L2,M2)=CONCATENATE(F3,G3,H3,I3,J3,K3,L3,M3)),"","delete")
+)
+
+5. Select A2 + B2 and then promulgate to the last row
+
+6. Right click A2 and paste by value
+
+7. remove all rows marked as 'delete' on column B using Excel filter
+
+8. remove '0' values at related cells (KEEP THE CELLS / ROWS / COLUMNS) at column A
+
+9 done with duplication removal!
