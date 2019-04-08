@@ -1,0 +1,4 @@
+=IF(ISNUMBER(SEARCH("Multiple Vulnerabilities",J2,1)),"Double?",
+IF(ISNUMBER(SEARCH("DHCP Server",I2,1)),"Delete?",
+"TBC"
+)))
