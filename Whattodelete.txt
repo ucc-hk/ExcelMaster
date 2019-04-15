@@ -1,0 +1,16 @@
+=IF(ISNUMBER(SEARCH("Purchase",L2,1)),"Delete",
+IF(ISNUMBER(SEARCH("FIPS-140 Compliant",J2,1)),"Delete",
+IF(ISNUMBER(SEARCH("DHCP Server Detection",J2,1)),"Delete",
+IF(ISNUMBER(SEARCH("Multiple Vulnerabilities",J2,1)),"Double?",
+IF(ISNUMBER(SEARCH("Security Update for Microsoft Office",J2,1)),"Double?",
+IF(ISNUMBER(SEARCH("CentOS 5",J2,1)),"Double?",
+IF(ISNUMBER(SEARCH("Mozilla Firefox <",J2,1)),"Double?",
+IF(ISNUMBER(SEARCH("Adobe Flash Player <=",J2,1)),"Double?",
+IF(ISNUMBER(SEARCH("HTTP TRACE / TRACK Methods Allowed",J2,1)),"Double?",
+IF(ISNUMBER(SEARCH("Security Updates for Internet Explorer",J2,1)),"Double?",
+IF(ISNUMBER(SEARCH("Security Updates for Microsoft Excel Products",J2,1)),"Double?",
+"TBC"
+)))))))))))
+
+
+then, order BY Host , Name
