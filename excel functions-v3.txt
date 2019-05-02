@@ -2,6 +2,8 @@ For Nesus finding raw result row duplication removal
 1. Before doing any findings sorting, drag all Nessus raw files into one excel file, then run merger script to merge all raw worksheets into single excel worksheet
 copy *.csv [result].csv
 
+Remove all rows where Risk = None (no risk rows) AND Risk = Risk (header rows)
+
 2. insert two columns (A and B) at the beginning
 
 3. Paste the following at cell A2 and fill down- To merge CVE number with duplication detail
@@ -24,4 +26,11 @@ copy *.csv [result].csv
 
 8. remove '0' values at related cells (KEEP THE CELLS / ROWS / COLUMNS) at column A
 
-9 done with duplication removal!
+9 done with duplication removal!  
+
+Sort by Host:
+
+=IF(NOT(CONCATENATE(B2,C2,D2,E2,F2,G2,H2,I2)=CONCATENATE(B3,C3,D3,E3,F3,G3,H3,I3)),"","delete")
+
+
+=IF(NOT(CONCATENATE(C2,D2,E2,F2,G2,H2,I2,J2)=CONCATENATE(C3,D3,E3,F3,G3,H3,I3,J3)),"","delete")
