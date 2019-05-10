@@ -1,6 +1,6 @@
 =IF(ISNUMBER(SEARCH("Purchase",L2,1)),"Delete",
 IF(ISNUMBER(SEARCH("FIPS-140 Compliant",J2,1)),"Delete",
-IF(ISNUMBER(SEARCH("DHCP Server Detection",J2,1)),"Delete",
+IF(ISNUMBER(SEARCH("DHCP Server Detection",I2,1)),"Delete",
 IF(ISNUMBER(SEARCH("Multiple Vulnerabilities",J2,1)),"Double?",
 IF(ISNUMBER(SEARCH("Security Update for Microsoft Office",J2,1)),"Double?",
 IF(ISNUMBER(SEARCH("CentOS 5",J2,1)),"Double?",
