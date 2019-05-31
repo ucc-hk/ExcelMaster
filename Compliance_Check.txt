@@ -1,0 +1,13 @@
+Windows Registry Settings for Nessus Compliance Check
+
+Restore administrative shares:
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\LanmanServer\Parameters
+AutoShareServer = 1
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+LocalAccountTokenFilterPolicy = 1
+
+
+TCP port 139 (NetBIOS) and TCP port 445 (SMB) are open
+
+C$ and ADMIN$ accessible to Nessus scanner for compliance check
